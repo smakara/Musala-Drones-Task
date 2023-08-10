@@ -9,6 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DroneBatteryLevelResponse {
 	
-	public int batteryCapacityLevel ;
+	public Double batteryCapacityLevel ;
 
 }

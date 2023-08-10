@@ -70,7 +70,7 @@ public class CheckDronesBatteryService {
 		if(droneOption.isPresent()) {
 		
 			Drone droneToBeUpdated = droneOption.get();
-			droneToBeUpdated.setCapacity(batteryLevel) ;
+			droneToBeUpdated.setCapacity((double) batteryLevel) ;
 			droneRepository.save(droneToBeUpdated) ;
 			
 		}

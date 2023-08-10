@@ -23,12 +23,12 @@ public class Drone {
 	@Column (nullable = false)
 	@Min(0)
 	@Max(500)
-	public Integer weight;
+	public int weight;
 
 	@Column (nullable = false)
 	@Min(0)
 	@Max(100)
-	public Integer capacity;
+	public Double capacity;
 	
 	public String state;
 	

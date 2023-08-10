@@ -28,12 +28,12 @@ public class DroneRegisterRequest {
 
 	@Min(0)
 	@Max(500)
-	public Integer weight;
+	public int weight;
 
 
 	@Min(0)
 	@Max(100)
-	public Integer capacity;
+	public Double capacity;
 	
 	@NotNull(message = "Model is required ")
 	public Model model;

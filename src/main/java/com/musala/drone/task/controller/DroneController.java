@@ -1,5 +1,7 @@
 package com.musala.drone.task.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.validation.annotation.Validated;
@@ -8,10 +10,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.musala.drone.task.dto.APIResponse;
 import com.musala.drone.task.dto.DroneRegisterRequest;
+import com.musala.drone.task.dto.LoadDroneRequest;
 import com.musala.drone.task.service.DroneService;
 
 import lombok.RequiredArgsConstructor;
@@ -53,5 +57,25 @@ public class DroneController {
 		log.info("checkingAvailableDrones Request ");
 	return 	droneService.checkingAvailableDrones ();
 }
+	
+	
+
+	
+	@PostMapping(value = "/load")
+	public  <T> APIResponse<T> loadDroneWithMedication (@Valid @RequestBody LoadDroneRequest request ) {
+			log.info("LoadDroneRequest : {}" , request);
+		return 	droneService.loadDroneWithMedication(request);
+	}
+	
+	@GetMapping(value = "/loaded/medication/{serialNumber}")
+	public  <T> APIResponse<T> getMedicationLoadedInDrone (@PathVariable String serialNumber ) {
+			log.info("getMedicationLoadedInDrone : {}" , serialNumber);
+		return 	droneService.getMedicationLoadedInDrone(serialNumber);
+	}
+	
+	
+	
+	
+	
 	
 }
