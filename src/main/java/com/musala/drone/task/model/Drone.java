@@ -17,19 +17,19 @@ public class Drone {
 
 	@Id
 	@Size(min =  1, max =  100)
-	private String serialNumber;
+	public String serialNumber;
 
 	@Column (nullable = false)
 	@Min(0)
 	@Max(500)
-	private Integer weight;
+	public Integer weight;
 
 	@Column (nullable = false)
 	@Min(0)
 	@Max(100)
-	private Integer capacity;
+	public Integer capacity;
 	
-	private String state;
+	public String state;
 	
-	private String model;
+	public String model;
 }
