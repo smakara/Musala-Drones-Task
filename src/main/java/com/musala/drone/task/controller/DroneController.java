@@ -32,8 +32,7 @@ public class DroneController {
 		return 	droneService.register (request);
 	}
 	
-	
-	
+
 	
 	@GetMapping(value = "/serial/{serialNumber}")
 	public  <T> APIResponse<T> getDroneBySerialNumber (@PathVariable String serialNumber ) {

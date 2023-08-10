@@ -1,5 +1,7 @@
 package com.musala.drone.task.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -89,6 +91,14 @@ public class DroneServiceImpl  implements DroneService{
 	public <T> APIResponse<T> checkingAvailableDrones() {
 		
 		return (APIResponse<T>) apiResponse.buildAPIResponse(droneRepository.findByState(Constants.IDLE), Constants.STATUS_CODE_SUCCESS);
+	}
+
+
+
+	@Override
+	public List<Drone> getAllDrones() {
+		
+		return droneRepository.findAll();
 	}
 
 }

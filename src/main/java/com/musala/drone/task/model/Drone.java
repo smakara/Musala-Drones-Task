@@ -17,6 +17,7 @@ public class Drone {
 
 	@Id
 	@Size(min =  1, max =  100)
+	@Column(name="serial_number")
 	public String serialNumber;
 
 	@Column (nullable = false)
